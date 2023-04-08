@@ -1,4 +1,6 @@
-# Ominira Tech Apresenta o Mirage
+# HACKATHON CPBSB5 - Desafio BRB
+
+## Ominira Tech Apresenta o Mirage
 
 Somos uma equipe inovadora e talentosa, unida pela paixão pela tecnologia e pelo desejo de criar soluções que promovam a liberdade e a autonomia dos usuários. O nome "Ominira", que significa liberdade, de origem yorubá, reflete a visão e os valores centrais da equipe, nos inspirando a desenvolver produtos e serviços que empoderem as pessoas e melhorem suas vidas.
 
@@ -15,22 +17,41 @@ Futuramente o Mirage poderá se tornar um cartão, uma experiência de pagamento
 Objetivo: Apresentar integração de cartões de crédito de vários bancos no app do BRB
 #### Para Hoje
 - 1° Passo: 
-  - Apresentar os cartões dos bancos 
-  - Apresentar o limite disponível de cada cartão
-  - Categorizar os cartões disponíveis por:
-    - Limite disponível
-    - Valor da fatura
-
+	- Apresentar os cartões dos bancos 
+ 	- Apresentar o limite disponível de cada cartão
+ 	- Apresentar o valor total das faturas abertas
+ 	- Categorizar os cartões disponíveis por
+ 		- Limite disponível
+ 		- Valor da fatura
+ 	
 #### Para Amanhã
-2° Passo:
-- Categorizar os cartões disponíveis por:
-  - Melhor dia de compra
-  - Vencimento da fatura
-- Apresentar o valor guardado em conta
-- Apresentar o valor total da fatura aberta
-- Permitir o pagamento da fatura dos outros bancos 
-
+- 2° Passo:
+	- Categorizar os cartões disponíveis por:
+		- Melhor dia de compra
+		- Vencimento da fatura
+	- Apresentar o valor guardado em conta
+	- Permitir o pagamento da fatura dos outros bancos 
+	
 #### Para o Futuro
-3° Passo:
-- Permitir a escolha de compra por débito ou crédito
-- Integração dos limites de diferentes bancos
+- 3° Passo:
+	- Permitir a escolha de compra por débito ou crédito
+	- Integração dos limites de diferentes bancos
+
+
+### Recursos Utilizados para desenvolvimento do protótipo
+
+- Docker
+- PHP
+- OpenAPI Mock
+- Apache
+- HTML, CSS e Javascript
+
+### Observações
+
+Para instalação do projeto será necessário configurar o Docker e Apache para perfeito funcionamento. Os dados podem ser consumidos diretamente do opencard.yml, disponível neste repositório. 
+
+Para maiores informações, entrar em contato com a equipe desenvolvedora através do Linkedin
+Amanda Almeida: https://www.linkedin.com/in/amanda16almeida/
+Jaqueline Queroz: https://www.linkedin.com/in/jaquelinequeroz/
+Wesley Cardoso: https://www.linkedin.com/in/bl4cksidesystem/
+
