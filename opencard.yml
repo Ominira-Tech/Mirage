@@ -761,8 +761,8 @@ components:
           type: string
           description: |
             Número de identificação do cartão: corresponde aos 4 últimos dígitos do cartão para pessoa natural, ou então, preencher com um identificador para pessoa jurídica, com as características definidas para os IDs no Open Finance.
-          maxLength: 100
-          minLength: 1
+          maxLength: 4
+          minLength: 4
           pattern: '/^[0-9]{4}$/'
           example: '4453'
         isMultipleCreditCard:
