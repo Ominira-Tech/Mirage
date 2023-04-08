@@ -62,7 +62,6 @@ $accounts = getCreditCardLimits("XXZTR3459087");
 echo "Contas de cartão de crédito:<br>";
 foreach ($accounts['data'] as $account) {
     echo "Limite total: " . utf8_encode($account['limitAmount']['amount']) . "<br>";
-    echo "Limite Usado: " . utf8_encode($account['usedAmount']['amount']) . "<br>";
     echo "Limite Disp.: " . utf8_encode($account['availableAmount']['amount']) . "<br>";
     echo "<br>";
     
