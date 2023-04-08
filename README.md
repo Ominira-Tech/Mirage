@@ -51,7 +51,7 @@ Objetivo: Apresentar integração de cartões de crédito de vários bancos no a
 Para instalação do projeto será necessário configurar o Docker e Apache para perfeito funcionamento. Os dados podem ser consumidos diretamente do opencard.yml, disponível neste repositório. 
 
 Para maiores informações, entrar em contato com a equipe desenvolvedora através do Linkedin
-Amanda Almeida: https://www.linkedin.com/in/amanda16almeida/
-Jaqueline Queroz: https://www.linkedin.com/in/jaquelinequeroz/
-Wesley Cardoso: https://www.linkedin.com/in/bl4cksidesystem/
+- Amanda Almeida: https://www.linkedin.com/in/amanda16almeida/
+- Jaqueline Queroz: https://www.linkedin.com/in/jaquelinequeroz/
+- Wesley Cardoso: https://www.linkedin.com/in/bl4cksidesystem/
 
