@@ -552,7 +552,7 @@ components:
           type: string
           maxLength: 100
           minLength: 1
-          pattern: '/^[0-9]{4}$/'
+          pattern: '^[0-9]{4}$'
           example: 3459087XXZTR
         dueDate:
           description: 'Data de vencimento da Fatura, que aparece para pagamento pelo cliente'
@@ -666,7 +666,7 @@ components:
           description: 'Identifica de forma única a conta pagamento pós-paga do cliente, mantendo as regras de imutabilidade dentro da instituição transmissora.'
           maxLength: 100
           minLength: 1
-          pattern: '/^[0-9]{4}$/'
+          pattern: '^[0-9]{4}$'
           example: XXZTR3459087
         brandName:
           type: string
@@ -722,7 +722,7 @@ components:
             Número de identificação do cartão: corresponde aos 4 últimos dígitos do cartão para PF, ou então, preencher com um identificador para PJ, com as caracteristicas definidas para os IDs no Open Finance.
           maxLength: 4
           minLength: 4
-          pattern: '/^[0-9]{4}$/'
+          pattern: '^[0-9]{4}$'
           example: '4453'
         lineName:
           type: string
@@ -763,7 +763,7 @@ components:
             Número de identificação do cartão: corresponde aos 4 últimos dígitos do cartão para pessoa natural, ou então, preencher com um identificador para pessoa jurídica, com as características definidas para os IDs no Open Finance.
           maxLength: 4
           minLength: 4
-          pattern: '/^[0-9]{4}$/'
+          pattern: '^[0-9]{4}$'
           example: '4453'
         isMultipleCreditCard:
           type: boolean
@@ -911,14 +911,14 @@ components:
           type: string
           maxLength: 100
           minLength: 1
-          pattern: '/^[0-9]{4}$/'
+          pattern: '^[0-9]{4}$'
           example: TXpRMU9UQTROMWhZV2xSU1FUazJSMDl
           description: Código ou identificador único prestado pela instituição que mantém a conta para representar a transação individual.
         identificationNumber:
           type: string
           maxLength: 100
           minLength: 1
-          pattern: '/^[0-9]{4}$/'
+          pattern: '^[0-9]{4}$'
           example: '4453'
           description: |
             Número de identificação do cartão: corresponde aos 4 últimos dígitos do cartão para PF, ou então, preencher com um identificador para PJ, com as caracteristicas definidas para os IDs no Open Finance.
@@ -932,7 +932,7 @@ components:
           type: string
           maxLength: 100
           minLength: 1
-          pattern: '/^[0-9]{4}$/'
+          pattern: '^[0-9]{4}$'
           example: MTU0OTU1NjI2NTk4OTRmc2ZhZDRmc2Q1NmZkM
           description: Informação que identifica a fatura onde consta a transação informada.
         creditDebitType:
