@@ -1,68 +1,56 @@
-<?php
-//https://raw.githubusercontent.com/OpenBanking-Brasil/draft-openapi/main/swagger-apis/credit-cards/2.0.1.yml
-function makeHttpRequest($url, $method = 'GET', $body = null) {
-    $options = array(
-        'http' => array(
-            'method' => $method,
-            'header' => 'Content-Type: application/json;charset=UTF-8'
-        )
-    );
-    
-    if ($body !== null) {
-        $options['http']['content'] = json_encode($body);
-    }
-    
-    $context = stream_context_create($options);
-    $result = file_get_contents($url, false, $context);
-    return json_decode($result, true);
-}
+<!doctype html>
+<html lang="pt-br">
 
-// Função para obter as informações de todas as contas de cartão de crédito
-function getCreditCardAccounts() {
-    $url = 'http://localhost:8080/open-banking/credit-cards-accounts/v2/accounts';
-    return makeHttpRequest($url);
-}
-// Função para obter as informações de uma conta de cartão de crédito específica
-function getCreditCardAccount($creditCardAccountId) {
-  $url = 'http://localhost:8080/open-banking/credit-cards-accounts/v2/accounts/' . $creditCardAccountId;
-  return makeHttpRequest($url);
-}
 
-// Função para obter as faturas de uma conta de cartão de crédito específica
-function getCreditCardBills($creditCardAccountId) {
-  $url = 'http://localhost:8080/open-banking/credit-cards-accounts/v2/accounts/' . $creditCardAccountId . '/bills';
-  return makeHttpRequest($url);
-}
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mirage App</title>
+    <!-- favicon -->
+    <link rel=icon href="images/favicon.png" sizes="20x20" type="image/png">
 
-// Função para obter as transações de uma fatura de uma conta de cartão de crédito específica
-function getCreditCardBillTransactions($creditCardAccountId, $billId) {
-  $url = 'http://localhost:8080/open-banking/credit-cards-accounts/v2/accounts/' . $creditCardAccountId . '/bills/' . $billId . '/transactions';
-  return makeHttpRequest($url);
-}
+    <!-- Stylesheet File -->
+    <link rel="stylesheet" href="assets/css/vendor.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 
-// Função para obter os limites de uma conta de cartão de crédito específica
-function getCreditCardLimits($creditCardAccountId) {
-  $url = 'http://localhost:8080/open-banking/credit-cards-accounts/v2/accounts/' . $creditCardAccountId . '/limits';
-  return makeHttpRequest($url);
-}
+</head>
 
-// Função para obter as transações de uma conta de cartão de crédito específica
-function getCreditCardTransactions($creditCardAccountId) {
-  $url = 'http://localhost:8080/open-banking/credit-cards-accounts/v2/accounts/' . $creditCardAccountId . '/transactions';
-  return makeHttpRequest($url);
-}
+<body>
+    <!-- start banner section -->
+    <div class="bemo-banner text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 align-self-center">
+                    <div class="section-title mt-4 mt-lg-0">
+                        <img class="mb-4" src="assets/img/logo2.png" alt="icon">
+                        <h3 class="entry-title">Gerencie todos os seus cartões e limites em um só lugar e tome decisões mais informado. Experimente a diferença!
+                        </h3>
+                        <p class="d-none d-lg-block">Mirage é realidade</p> 
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <!-- phone -->
+                    <div class="phoneContent">
+                        <div class="phoneWrapper">
+                            <div class="in">
+                                <iframe class="getFrame" src="home.php"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- phone -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end banner section -->
 
-// Função para obter as transações atuais de uma conta de cartão de crédito específica
-function getCurrentCreditCardTransactions($creditCardAccountId) {
-  $url = 'http://localhost:8080/open-banking/credit-cards-accounts/v2/accounts/' . $creditCardAccountId . '/transactions-current';
-  return makeHttpRequest($url);
-}
+    <!--Common JS Plugin-->
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/main.js"></script>
 
-$accounts = getCreditCardLimits("XXZTR3459087");
-echo "Contas de cartão de crédito:<br>";
-foreach ($accounts['data'] as $account) {
-    echo "Limite total: " . utf8_encode($account['limitAmount']['amount']) . "<br>";
-    echo "Limite Disp.: " . utf8_encode($account['availableAmount']['amount']) . "<br>";
-    echo "<br>";
-    
-}
+</body>
+
+</html>

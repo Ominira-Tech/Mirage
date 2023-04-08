@@ -1,3 +1,10 @@
+<?php 
+include_once('mirage.php');
+for ($i = 0; $i < 2; $i++) {
+    $availableAmount = number_format($accounts['data'][$i]['availableAmount']['amount'], 2, ',', '.');
+    $billTotalAmount = number_format($getCreditCardBills['data'][$i]['billTotalAmount']['amount'], 2, ',', '.');
+   }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -105,54 +112,32 @@
             <div class="col-sm-12 col-12 text-right">
                 <select id="dropdown">
                     <option value="">Ordenar por</option>
-                    <option value="opcao1">Opção 1</option>
-                    <option value="opcao2">Opção 2</option>
-                    <option value="opcao3">Opção 3</option>
+                    <option value="opcao1">Maior Limite</option>
+                    <option value="opcao2">Maior Limite</option>
+                    <option value="opcao3">Vencimento</option>
                 </select>
             </div>
-            <div class="ba-cart-inner" style="background-image: url(assets/img/bg/4.png);">
+            <?php 
+            for ($i = 0; $i < 2; $i++) {
+
+                $availableAmount = number_format($accounts['data'][$i]['availableAmount']['amount'], 2, ',', '.');
+                $dueDate = date('d/m', strtotime($getCreditCardBills['data'][$i]['dueDate']));
+                $billTotalAmount = number_format($getCreditCardBills['data'][$i]['billTotalAmount']['amount'], 2, ',', '.');
+                $identificationNumber = $getCreditCardAccount['data']['paymentMethod'][$i]['identificationNumber'];
+
+            ?>  
+            <div class="ba-cart-inner" style="background-image: url(assets/img/bg/<?=$i + 11?>.png);">
                 <p>Limite disponível</p>
-                <h4>R$ 300,00</h4>
+                <h4>R$  <?= $availableAmount?></h4>
                 <p>Número do Cartão</p>
-                <h5>0000 0000 0000 0909</h5>
+                <h5>0000 0000 0000 <?= $identificationNumber?></h5>
                 <p>Fatura atual</p>
-                <h5>150,00</h5>
+                <h5><?= $billTotalAmount?></h5>
                 <p>Vencimento da Fatura</p>
-                <h5>10/05</h5>
+                <h5><?= $dueDate?></h5>
                 </div>
             <br>
-            <div class="ba-cart-inner" style="background-image: url(assets/img/bg/11.png);">
-                <p>Limite disponível</p>
-                <h4>R$ 300,00</h4>
-                <p>Número do Cartão</p>
-                <h5>0000 0000 0000 0909</h5>
-                <p>Fatura atual</p>
-                <h5>150,00</h5>
-                <p>Vencimento da Fatura</p>
-                <h5>10/05</h5>
-            </div>
-            <br>
-            <div class="ba-cart-inner" style="background-image: url(assets/img/bg/13.png);">
-                <p>Limite disponível</p>
-                <h4>R$ 300,00</h4>
-                <p>Número do Cartão</p>
-                <h5>0000 0000 0000 0909</h5>
-                <p>Fatura atual</p>
-                <h5>150,00</h5>
-                <p>Vencimento da Fatura</p>
-                <h5>10/05</h5>
-            </div>
-            <br>
-            <div class="ba-cart-inner" style="background-image: url(assets/img/bg/10.png);">
-                <p>Limite disponível</p>
-                <h4>R$ 300,00</h4>
-                <p>Número do Cartão</p>
-                <h5>0000 0000 0000 0909</h5>
-                <p>Fatura atual</p>
-                <h5>150,00</h5>
-                <p>Vencimento da Fatura</p>
-                <h5>10/05</h5>
-            </div>
+            <?php } ?>
             <br>
             </div>      
     </div>
